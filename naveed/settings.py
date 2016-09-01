@@ -73,14 +73,16 @@ WSGI_APPLICATION = 'naveed.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8e1c1suh1cktk',
+        'USER': 'esprztlriuunra',
+        'HOST': 'ec2-54-83-202-115.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'PASSWORD' : 'a1z-N4k2z3J52aQUa_wIHaZlJ7',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
