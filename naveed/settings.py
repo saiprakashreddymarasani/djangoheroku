@@ -25,7 +25,7 @@ SECRET_KEY = 'hmi@5e_tfn8!1xem)c-=m5ffz&4@e6&jmuvt1pr4a8d42wp7$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['calm-taiga-82621.herokuapp.com']
 
 
 # Application definition
@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'naveed.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'empdetails',
-        'USER': 'bd9b15235d8add',
-        'HOST': 'us-cdbr-azure-central-a.cloudapp.net',
-        'PORT': '3306',
-        'PASSWORD' : 'e3238c6c',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -122,4 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
